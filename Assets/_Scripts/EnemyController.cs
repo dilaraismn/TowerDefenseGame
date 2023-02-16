@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     private Castle _castle;
     
     private float attackCount;
-    private int currentPoint;
+    private int currentPoint, selectedAttackPoint;
     private bool reachedEnd;
     
     void Start()
@@ -42,11 +42,15 @@ public class EnemyController : MonoBehaviour
                 if (currentPoint >= _path.pathPoints.Length)
                 {
                     reachedEnd = true;
+                    selectedAttackPoint = Random.Range(0, _castle.attackPoints.Length);
                 }
             }
         }
         else
         {
+            transform.position = Vector3.MoveTowards(transform.position,
+                _castle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
+            
             attackCount -= Time.deltaTime;
             if (attackCount <= 0)
             {
