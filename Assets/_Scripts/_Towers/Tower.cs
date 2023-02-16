@@ -5,8 +5,8 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] private LayerMask whatIsEnemy;
-    [SerializeField] private List<EnemyController> enemiesInRange = new List<EnemyController>();
     [SerializeField] private float checkTime = .5f;
+    public List<EnemyController> enemiesInRange = new List<EnemyController>();
     private Collider[] collidersInRange;
     public float range = 3;
     private float checkCounter;
