@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed, timeBetweenAttacks, damagePerAttack;
 
     private Path _path;
+    private Castle _castle;
+    
+    private float attackCount;
     private int currentPoint;
     private bool reachedEnd;
     
     void Start()
     {
         _path = FindObjectOfType<Path>();
+        _castle = FindObjectOfType<Castle>();
+        attackCount = timeBetweenAttacks;
     }
 
     void Update()
     {
-        if (reachedEnd) return;
-        transform.LookAt(_path.pathPoints[currentPoint]);
-        
-        transform.position = Vector3.MoveTowards(transform.position, _path.pathPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, _path.pathPoints[currentPoint].position) < 0.1f)
+        if (!reachedEnd)
         {
-            currentPoint = currentPoint + 1;
-            if (currentPoint >= _path.pathPoints.Length)
+            transform.LookAt(_path.pathPoints[currentPoint]);
+        
+            transform.position = Vector3.MoveTowards(transform.position, _path.pathPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, _path.pathPoints[currentPoint].position) < 0.1f)
             {
-                reachedEnd = true;
+                currentPoint = currentPoint + 1;
+                if (currentPoint >= _path.pathPoints.Length)
+                {
+                    reachedEnd = true;
+                }
             }
         }
+        else
+        {
+            attackCount -= Time.deltaTime;
+            if (attackCount <= 0)
+            {
+                attackCount = timeBetweenAttacks;
+                _castle.TakeDamage(damagePerAttack);
+            }
+        }
+        
     }
 }
