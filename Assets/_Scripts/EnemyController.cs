@@ -15,8 +15,16 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
-        _path = FindObjectOfType<Path>();
-        _castle = FindObjectOfType<Castle>();
+        if (_path == null)
+        {
+            _path = FindObjectOfType<Path>();
+        }
+
+        if (_castle == null)
+        {
+            _castle = FindObjectOfType<Castle>();
+        }
+        
         attackCount = timeBetweenAttacks;
     }
 
@@ -47,5 +55,11 @@ public class EnemyController : MonoBehaviour
             }
         }
         
+    }
+
+    public void Setup(Castle newCastle, Path newPath)
+    {
+        _castle = newCastle;
+        _path = newPath;
     }
 }
