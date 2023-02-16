@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private GameObject impactEffect;
     [SerializeField] private float damageAmount; //to enemy
     private Rigidbody _rigidbody;
+    private bool hasDamaged;
 
     private void Awake()
     {
@@ -22,9 +23,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" && !hasDamaged)
         {
             other.GetComponent<EnemyHealthController>().TakeDamage(damageAmount);
+            hasDamaged = true;
         }
         Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
