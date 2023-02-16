@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (reachedEnd) return;
+        transform.LookAt(_path.pathPoints[currentPoint]);
         
         transform.position = Vector3.MoveTowards(transform.position, _path.pathPoints[currentPoint].position, moveSpeed * Time.deltaTime);
 
