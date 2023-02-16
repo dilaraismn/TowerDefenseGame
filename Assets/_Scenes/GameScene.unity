@@ -1916,6 +1916,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   checkTime: 0.2
+  isEnemiesUpdated: 0
   enemiesInRange: []
   range: 3
 --- !u!114 &1383591502
@@ -1931,7 +1932,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1371375801771933649, guid: f5032385de5c10f4ea2637e9e51e93a5, type: 3}
+  shotEffect: {fileID: 728888674947820578, guid: a2990ef826f499545a1266203cc9e379, type: 3}
   firePoint: {fileID: 267224316}
+  launcherModel: {fileID: 70703172}
   timeBetweenShots: 1
 --- !u!1 &1398691846
 GameObject:

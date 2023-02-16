@@ -6,10 +6,12 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private LayerMask whatIsEnemy;
     [SerializeField] private float checkTime = .5f;
+    [HideInInspector] public bool isEnemiesUpdated;
+
     public List<EnemyController> enemiesInRange = new List<EnemyController>();
     private Collider[] collidersInRange;
-    public float range = 3;
     private float checkCounter;
+    public float range = 3;
     
     void Start()
     {
@@ -18,6 +20,7 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
+        isEnemiesUpdated = false;
         checkCounter -= Time.deltaTime;
         
         if (checkCounter <= 0)
@@ -31,6 +34,8 @@ public class Tower : MonoBehaviour
             {
                 enemiesInRange.Add(col.GetComponent<EnemyController>());
             }
+
+            isEnemiesUpdated = true;
         }
     }
 }

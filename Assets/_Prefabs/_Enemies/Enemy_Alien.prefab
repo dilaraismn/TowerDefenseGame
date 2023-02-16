@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9219868469784372508}
   - component: {fileID: 9219868469784372707}
+  - component: {fileID: 44124419008999161}
   - component: {fileID: 117995580228532412}
   m_Layer: 6
   m_Name: Enemy_Alien
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,9 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19705c7a920911544b2ad6f7bedebf6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1.5
   timeBetweenAttacks: 0.5
   damagePerAttack: 1
+--- !u!114 &44124419008999161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219868469784372509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa36a5bc1a4d05418e2937cb79d21c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 15
 --- !u!136 &117995580228532412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58,10 +72,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 0.71375775
+  m_Radius: 0.21027279
+  m_Height: 0.557068
   m_Direction: 1
-  m_Center: {x: 0, y: 0.14912117, z: 0}
+  m_Center: {x: 0, y: 0.22746605, z: 0.011244774}
 --- !u!1 &9219868470716558061
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ProjectileTower : MonoBehaviour
 {
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject projectile, shotEffect;
+    [SerializeField] private Transform firePoint, launcherModel;
     [SerializeField] private float timeBetweenShots = 1f;
-
+    
     private float shotCounter;
     private Transform targetEnemy;
     private Tower _tower;
@@ -19,6 +19,13 @@ public class ProjectileTower : MonoBehaviour
 
     void Update()
     {
+       CannonModelLookAtEnemy();
+       SpawnCannon();
+       SetEnemyTarget();
+    }
+    
+    private void SpawnCannon()
+    {
         shotCounter -= Time.deltaTime;
         
         if (shotCounter <= 0 && targetEnemy != null)
@@ -26,27 +33,43 @@ public class ProjectileTower : MonoBehaviour
             shotCounter = timeBetweenShots;
             firePoint.LookAt(targetEnemy);
             Instantiate(projectile, firePoint.position, firePoint.rotation);
+            Instantiate(shotEffect, firePoint.position, firePoint.rotation);
         }
+    }
 
-        if (_tower.enemiesInRange.Count > 0)
+    private void SetEnemyTarget()
+    {
+        if (_tower.isEnemiesUpdated)
         {
-            float minDistance = _tower.range + 1;
-            foreach (EnemyController enemy in _tower.enemiesInRange)
+            if (_tower.enemiesInRange.Count > 0)
             {
-                if (enemy != null)
+                float minDistance = _tower.range + 1;
+                foreach (EnemyController enemy in _tower.enemiesInRange)
                 {
-                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
-                    if (distance < minDistance)
+                    if (enemy != null)
                     {
-                        minDistance = distance;
-                        targetEnemy = enemy.transform;
+                        float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            targetEnemy = enemy.transform;
+                        }
                     }
                 }
             }
+            else
+            {
+                targetEnemy = null;
+            }
         }
-        else
+    }
+    
+    private void CannonModelLookAtEnemy()
+    {
+        if (targetEnemy != null)
         {
-            targetEnemy = null;
+            launcherModel.rotation = Quaternion.Slerp(launcherModel.rotation, Quaternion.LookRotation(targetEnemy.position - transform.position), 5f * Time.deltaTime);
+            launcherModel.rotation = Quaternion.Euler(0, launcherModel.rotation.eulerAngles.y, 0f);
         }
     }
 }

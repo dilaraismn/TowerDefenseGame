@@ -6,6 +6,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    [SerializeField] private GameObject impactEffect;
+    [SerializeField] private float damageAmount; //to enemy
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -20,6 +22,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Enemy")
+        {
+            other.GetComponent<EnemyHealthController>().TakeDamage(damageAmount);
+        }
+        Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
