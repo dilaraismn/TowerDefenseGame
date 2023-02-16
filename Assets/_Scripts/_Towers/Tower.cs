@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
     public List<EnemyController> enemiesInRange = new List<EnemyController>();
     private Collider[] collidersInRange;
     private float checkCounter;
+    public GameObject rangeModel;
     public float range = 3;
     
     void Start()

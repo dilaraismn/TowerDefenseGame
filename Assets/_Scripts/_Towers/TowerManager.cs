@@ -8,7 +8,8 @@ public class TowerManager : MonoBehaviour
     public static TowerManager instance;
     public Transform indicator;
     public Tower activeTower;
-    public LayerMask whatIsPlacement;
+    public LayerMask whatIsPlacement, whatIsObstacle;
+    public float topSafePercent = 12f;
     public bool isPlacing;
 
     private void Awake()
@@ -21,12 +22,27 @@ public class TowerManager : MonoBehaviour
         if (isPlacing)
         {
             indicator.position = GetGridPosition();
+            RaycastHit hit;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.mousePosition.y > Screen.height * (1 - (topSafePercent / 100))) //top x area of the screen
             {
-                isPlacing = false;
-                Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
                 indicator.gameObject.SetActive(false);
+            }
+            //Boundaries
+            //start point + (so it goes beyond the ground), direction (vector3.up), store info in hit, max distance upwards, layermask
+            else if (Physics.Raycast(indicator.position + new Vector3(0, -2, 0), Vector3.up, out hit, 10,whatIsObstacle))
+            {
+                indicator.gameObject.SetActive(false);
+            }
+            else
+            {
+                indicator.gameObject.SetActive(true);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isPlacing = false;
+                    Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
+                    indicator.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -35,7 +51,14 @@ public class TowerManager : MonoBehaviour
     {
         activeTower = towerToPlace;
         isPlacing = true;
-        indicator.gameObject.SetActive(true);
+        Destroy(indicator.gameObject);
+        Tower placeTower = Instantiate(activeTower);
+        placeTower.enabled = false;
+        placeTower.GetComponent<Collider>().enabled = false;
+        indicator = placeTower.transform;
+        
+        placeTower.rangeModel.SetActive(true);
+        placeTower.rangeModel.transform.localScale = new Vector3(placeTower.range, 1, placeTower.range);
     }
 
     public Vector3 GetGridPosition()
