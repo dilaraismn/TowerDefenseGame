@@ -30,6 +30,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (_castle.currentHealth <= 0) return;
+       
         if (!reachedEnd)
         {
             transform.LookAt(_path.pathPoints[currentPoint]);

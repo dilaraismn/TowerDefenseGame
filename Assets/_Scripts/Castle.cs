@@ -7,9 +7,9 @@ public class Castle : MonoBehaviour
 {
     [SerializeField] private float totalHealth = 100;
     [SerializeField] private Slider healthSlider;
+    [HideInInspector]public float currentHealth;
     public Transform[] attackPoints;
-    public float currentHealth;
-    
+
     void Start()
     {
         currentHealth = totalHealth;

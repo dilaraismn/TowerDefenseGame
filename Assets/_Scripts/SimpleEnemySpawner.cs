@@ -19,7 +19,7 @@ public class SimpleEnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (amountTospawn > 0)
+        if (amountTospawn > 0 && _castle.currentHealth > 0)
         {
             spawnCounter -= Time.deltaTime;
            
