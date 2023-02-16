@@ -8,6 +8,7 @@ public class EnemyHealthController : MonoBehaviour
 {
     public float totalHealth;
     public Slider healthBar;
+    public int moneyOnDeath = 50;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class EnemyHealthController : MonoBehaviour
         if (totalHealth <= 0)
         {
             Destroy(gameObject);
+            MoneyManager.instance.GiveMoney(moneyOnDeath);
         }
 
         healthBar.value = totalHealth;

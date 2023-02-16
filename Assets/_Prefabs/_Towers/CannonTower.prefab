@@ -194,6 +194,7 @@ MonoBehaviour:
   enemiesInRange: []
   rangeModel: {fileID: 4498340283858296161}
   range: 3
+  cost: 100
 --- !u!114 &8506343075472581658
 MonoBehaviour:
   m_ObjectHideFlags: 0
