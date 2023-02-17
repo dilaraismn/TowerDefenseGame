@@ -483,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415592, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: Button_Level_2
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415593, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Pivot.x
@@ -735,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415592, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Name
-      value: Button (3)
+      value: Button_Level_4
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415593, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Pivot.x
@@ -1223,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415592, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Name
-      value: Button (4)
+      value: Button_Level_5
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415593, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Pivot.x
@@ -1630,7 +1630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415592, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Button_Level_1
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415593, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Pivot.x
@@ -2734,7 +2734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415592, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Name
-      value: Button (2)
+      value: Button_Level_3
       objectReference: {fileID: 0}
     - target: {fileID: 2676723190565415593, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_Pivot.x
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ac9cf115d9d9641965a326b812c034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level2
+  levelToLoad: Level3
 --- !u!1001 &2047367520
 PrefabInstance:
   m_ObjectHideFlags: 0
