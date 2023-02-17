@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,5 +40,10 @@ public class Tower : MonoBehaviour
 
             isEnemiesUpdated = true;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        UIManager.instance.OpenTowerUpgradePanel();
     }
 }
