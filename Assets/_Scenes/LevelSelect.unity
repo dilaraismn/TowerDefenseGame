@@ -464,7 +464,7 @@ PrefabInstance:
     - target: {fileID: 2676723190565415590, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1121455378}
+      objectReference: {fileID: 294917634}
     - target: {fileID: 2676723190565415590, guid: 6a10be691d00fdb4eb95245482316c78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ac9cf115d9d9641965a326b812c034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: GameScene
+  levelToLoad: Level2
 --- !u!1001 &437706346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ac9cf115d9d9641965a326b812c034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: GameScene
+  levelToLoad: Level2
 --- !u!1001 &535385467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ac9cf115d9d9641965a326b812c034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: GameScene
+  levelToLoad: Level2
 --- !u!1001 &1044594889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ac9cf115d9d9641965a326b812c034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: GameScene
+  levelToLoad: Level2
 --- !u!1001 &2047367520
 PrefabInstance:
   m_ObjectHideFlags: 0
