@@ -19,8 +19,14 @@ public class TowerUpgradeController : MonoBehaviour
         _tower = GetComponent<Tower>();
     }
 
-    void Update()
+    public void UpgradeRange()
     {
+        _tower.range = rangeUpgrades[currentRangeUpgrade].amount;
+        currentRangeUpgrade++;
+        if (currentRangeUpgrade >= rangeUpgrades.Length)
+        {
+            hasRangeUpgrade = false;
+        }
         
     }
 }
@@ -29,5 +35,5 @@ public class TowerUpgradeController : MonoBehaviour
 public class UpgradeStage
 {
     public float amount;
-    public float cost;
+    public int cost;
 }

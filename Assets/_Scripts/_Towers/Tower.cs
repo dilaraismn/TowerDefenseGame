@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private LayerMask whatIsEnemy;
     [SerializeField] private float checkTime = .5f;
     [HideInInspector] public bool isEnemiesUpdated;
+    [HideInInspector] public TowerUpgradeController upgrader;
 
     public List<EnemyController> enemiesInRange = new List<EnemyController>();
     private Collider[] collidersInRange;
@@ -20,6 +21,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         checkCounter = checkTime;
+        upgrader = GetComponent<TowerUpgradeController>();
     }
 
     void Update()
@@ -41,11 +43,22 @@ public class Tower : MonoBehaviour
 
             isEnemiesUpdated = true;
         }
+
+        if (TowerManager.instance.selectedTower == this)
+        {
+            rangeModel.SetActive(true);
+            rangeModel.transform.localScale = new Vector3(range, 1, range);
+        }
     }
 
     private void OnMouseDown()
     {
         UIManager.instance.OpenTowerUpgradePanel();
+
+        if (TowerManager.instance.selectedTower != null)
+        {
+            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+        }
         TowerManager.instance.selectedTower = this;
         TowerManager.instance.MoveTowerSelectionEffect();
     }

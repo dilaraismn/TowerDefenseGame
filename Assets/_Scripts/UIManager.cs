@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
     public void CloseTowerUpgradePanel()
     {
         towerUpgradePanel.SetActive(false);
+        TowerManager.instance.selectedTower.rangeModel.SetActive(false);
         TowerManager.instance.selectedTower = null;
         TowerManager.instance.selectedTowerEffect.SetActive(false);
     }

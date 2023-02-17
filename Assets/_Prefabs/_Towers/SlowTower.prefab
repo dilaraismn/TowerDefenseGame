@@ -117,6 +117,7 @@ MonoBehaviour:
     m_Bits: 64
   checkTime: 0.2
   isEnemiesUpdated: 0
+  upgrader: {fileID: 0}
   enemiesInRange: []
   rangeModel: {fileID: 6655072074630799622}
   range: 3
@@ -169,7 +170,7 @@ MonoBehaviour:
   - amount: 4.5
     cost: 150
   currentRangeUpgrade: 0
-  hasRangeUpgrade: 0
+  hasRangeUpgrade: 1
   fireRateUpgrades:
   - amount: 0.45
     cost: 100
@@ -178,7 +179,7 @@ MonoBehaviour:
   - amount: 0.35
     cost: 300
   currenFireRateUpgrade: 0
-  hasFireRateUpgrade: 0
+  hasFireRateUpgrade: 1
 --- !u!1 &5957785997653429570
 GameObject:
   m_ObjectHideFlags: 0
