@@ -45,5 +45,7 @@ public class Tower : MonoBehaviour
     private void OnMouseDown()
     {
         UIManager.instance.OpenTowerUpgradePanel();
+        TowerManager.instance.selectedTower = this;
+        TowerManager.instance.MoveTowerSelectionEffect();
     }
 }

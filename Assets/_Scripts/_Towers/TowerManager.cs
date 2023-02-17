@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
+    [HideInInspector] public Tower activeTower, selectedTower;
     public static TowerManager instance;
     public Transform indicator;
-    public Tower activeTower;
     public LayerMask whatIsPlacement, whatIsObstacle;
+    public GameObject selectedTowerEffect;
     public float topSafePercent = 12f;
     public bool isPlacing;
 
@@ -82,5 +83,14 @@ public class TowerManager : MonoBehaviour
         
         location.y = 0;
         return location;
+    }
+
+    public void MoveTowerSelectionEffect()
+    {
+        if (selectedTower != null)
+        {
+            selectedTowerEffect.transform.position = selectedTower.transform.position;
+            selectedTowerEffect.SetActive(true);
+        }
     }
 }
