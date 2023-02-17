@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 1457575940923857022}
   - component: {fileID: 7869079248505195062}
   - component: {fileID: 1457575940923857017}
+  - component: {fileID: -4697423980658791355}
   m_Layer: 8
   m_Name: SlowTower
   m_TagString: Untagged
@@ -119,6 +120,7 @@ MonoBehaviour:
   enemiesInRange: []
   rangeModel: {fileID: 6655072074630799622}
   range: 3
+  fireRate: 0.5
   cost: 150
 --- !u!136 &7869079248505195062
 CapsuleCollider:
@@ -147,6 +149,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectRing: {fileID: 5957785997653429571}
+--- !u!114 &-4697423980658791355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457575940923857016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1baf53486014a44a6f0718f621852c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeUpgrades:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 0
+  fireRateUpgrades:
+  - amount: 0.45
+    cost: 100
+  - amount: 0.4
+    cost: 200
+  - amount: 0.35
+    cost: 300
+  currenFireRateUpgrade: 0
+  hasFireRateUpgrade: 0
 --- !u!1 &5957785997653429570
 GameObject:
   m_ObjectHideFlags: 0

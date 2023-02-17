@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2937210178000558392}
   - component: {fileID: 5894610901633485680}
   - component: {fileID: 2937210178000558399}
+  - component: {fileID: 684806227355106685}
   m_Layer: 8
   m_Name: BombTower
   m_TagString: Untagged
@@ -87,6 +88,7 @@ MonoBehaviour:
   enemiesInRange: []
   rangeModel: {fileID: 6963365788479856704}
   range: 3
+  fireRate: 2.5
   cost: 200
 --- !u!136 &5894610901633485680
 CapsuleCollider:
@@ -114,9 +116,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4e05d02de9e1f429ab25efb7c5fe38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenBomb: 2.5
   _bomb: {fileID: 8855398485563825251, guid: 5e553248215863d4182c3ed19ec18a53, type: 3}
   spawnPoint: {fileID: 4225375314643372074}
+--- !u!114 &684806227355106685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937210178000558398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1baf53486014a44a6f0718f621852c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeUpgrades:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 0
+  fireRateUpgrades:
+  - amount: 2
+    cost: 100
+  - amount: 1.75
+    cost: 200
+  - amount: 1.5
+    cost: 300
+  currenFireRateUpgrade: 0
+  hasFireRateUpgrade: 0
 --- !u!1 &2937210178606751968
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class Tower : MonoBehaviour
     private float checkCounter;
     public GameObject rangeModel;
     public float range = 3;
+    public float fireRate;
     public int cost = 100;
     
     void Start()
