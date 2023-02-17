@@ -7,9 +7,9 @@ public class SimpleEnemySpawner : MonoBehaviour
     [SerializeField] private EnemyController enemyToSpawn;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float timeBetweenSpawns;
-    [SerializeField] private int amountTospawn = 15;
     [SerializeField] private Castle _castle;
     [SerializeField] private Path _path;
+    public int amountTospawn = 15;
     private float spawnCounter;
 
     void Start()
@@ -19,7 +19,7 @@ public class SimpleEnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (amountTospawn > 0 && _castle.currentHealth > 0)
+        if (amountTospawn > 0 && LevelManager.instance.levelActive)
         {
             spawnCounter -= Time.deltaTime;
            

@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject notEnoughGoldWarningText;
+    public GameObject notEnoughGoldWarningText, levelCompleteScreen, levelFailScreen, towerButtons;
     public static UIManager instance;
     public TextMeshProUGUI goldText;
     private void Awake()

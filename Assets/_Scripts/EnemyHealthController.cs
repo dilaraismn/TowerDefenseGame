@@ -12,6 +12,7 @@ public class EnemyHealthController : MonoBehaviour
 
     private void Start()
     {
+        LevelManager.instance.activeEnemies.Add(this);
         healthBar.maxValue = totalHealth;
         healthBar.value = totalHealth;
     }
@@ -29,6 +30,7 @@ public class EnemyHealthController : MonoBehaviour
         {
             Destroy(gameObject);
             MoneyManager.instance.GiveMoney(moneyOnDeath);
+            LevelManager.instance.activeEnemies.Remove(this);
         }
 
         healthBar.value = totalHealth;

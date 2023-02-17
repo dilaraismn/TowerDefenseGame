@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (_castle.currentHealth <= 0) return;
+        if (!LevelManager.instance.levelActive) return;
        
         if (!reachedEnd)
         {
