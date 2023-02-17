@@ -441,6 +441,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   timeBetweenAttacks: 0.5
   damagePerAttack: 1
+  speedMod: 1
 --- !u!114 &44124419008999161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 15
   healthBar: {fileID: 281765573}
+  moneyOnDeath: 50
 --- !u!136 &117995580228532412
 CapsuleCollider:
   m_ObjectHideFlags: 0

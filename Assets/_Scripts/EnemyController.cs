@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, timeBetweenAttacks, damagePerAttack;
 
+    public float speedMod = 1;
+        
     private Path _path;
     private Castle _castle;
     
@@ -36,7 +38,7 @@ public class EnemyController : MonoBehaviour
         {
             transform.LookAt(_path.pathPoints[currentPoint]);
         
-            transform.position = Vector3.MoveTowards(transform.position, _path.pathPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _path.pathPoints[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
 
             if (Vector3.Distance(transform.position, _path.pathPoints[currentPoint].position) < 0.1f)
             {
@@ -51,7 +53,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                _castle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
+                _castle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime * speedMod);
             
             attackCount -= Time.deltaTime;
             if (attackCount <= 0)
