@@ -4958,30 +4958,6 @@ PrefabInstance:
       propertyPath: _castle
       value: 
       objectReference: {fileID: 1899290025}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[0]
-      value: 
-      objectReference: {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[1]
-      value: 
-      objectReference: {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[2]
-      value: 
-      objectReference: {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[3]
-      value: 
-      objectReference: {fileID: 3232925811725931107, guid: 192d4d4463d5cf04e8f541a6ab2ba88d, type: 3}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[4]
-      value: 
-      objectReference: {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
 --- !u!1001 &2252664176448865779

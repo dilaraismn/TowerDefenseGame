@@ -5140,9 +5140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8f8887495973746b7f6d4723b9b1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
   spawnPoint: {fileID: 1699236785847750366}
   timeBetweenSpawns: 1
   _castle: {fileID: 0}
   _path: {fileID: 0}
+  enemiesToSpawn:
+  - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+  - {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
+  - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
+  - {fileID: 3232925811725931107, guid: 192d4d4463d5cf04e8f541a6ab2ba88d, type: 3}
+  - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
+  - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
   amountTospawn: 15
