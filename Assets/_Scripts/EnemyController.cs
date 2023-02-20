@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, timeBetweenAttacks, damagePerAttack;
 
-    public float speedMod = 1;
+   [HideInInspector]public float speedMod = 1;
         
     private Path _path;
     private Castle _castle;
