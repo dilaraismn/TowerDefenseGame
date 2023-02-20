@@ -53,7 +53,8 @@ public class Tower : MonoBehaviour
 
     private void OnMouseDown()
     {
-
+        if (!LevelManager.instance.levelActive) return;
+        
         if (TowerManager.instance.selectedTower != null)
         {
             TowerManager.instance.selectedTower.rangeModel.SetActive(false);

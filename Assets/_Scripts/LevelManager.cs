@@ -50,6 +50,8 @@ public class LevelManager : MonoBehaviour
             {
                 UIManager.instance.levelFailScreen.SetActive(!levelVictory);
                 UIManager.instance.levelCompleteScreen.SetActive(levelVictory);
+                
+                UIManager.instance.CloseTowerUpgradePanel();
             }
         }
     }

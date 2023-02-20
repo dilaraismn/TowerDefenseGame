@@ -8,6 +8,9 @@ public class TowerButton : MonoBehaviour
 
     public void SelectTower()
     {
-        TowerManager.instance.StartTowerPlacement(towerToPlace);
+        if (LevelManager.instance.levelActive)
+        {
+            TowerManager.instance.StartTowerPlacement(towerToPlace);
+        }
     }
 }

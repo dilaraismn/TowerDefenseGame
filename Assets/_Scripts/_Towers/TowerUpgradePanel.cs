@@ -50,6 +50,11 @@ public class TowerUpgradePanel : MonoBehaviour
             {
                 upgrader.UpgradeRange();
                 SetupPanel();
+                UIManager.instance.notEnoughGoldWarningText.SetActive(false);
+            }
+            else
+            {
+                UIManager.instance.notEnoughGoldWarningText.SetActive(true);
             }
         }
     }
@@ -64,6 +69,11 @@ public class TowerUpgradePanel : MonoBehaviour
             {
                 upgrader.UpgradeFireRate();
                 SetupPanel();
+                UIManager.instance.notEnoughGoldWarningText.SetActive(false);
+            }
+            else
+            {
+                UIManager.instance.notEnoughGoldWarningText.SetActive(true);
             }
         }
     }
