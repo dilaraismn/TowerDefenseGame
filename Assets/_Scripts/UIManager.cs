@@ -7,7 +7,8 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject notEnoughGoldWarningText, levelCompleteScreen, levelFailScreen, towerButtons, pauseScreen, towerUpgradePanel;
+    public GameObject notEnoughGoldWarningText, levelCompleteScreen, levelFailScreen, towerButtons, pauseScreen;
+    public TowerUpgradePanel towerUpgradePanel;
     public static UIManager instance;
     public TextMeshProUGUI goldText;
     public string levelSelectScene, mainMenuScene;
@@ -62,12 +63,13 @@ public class UIManager : MonoBehaviour
 
     public void OpenTowerUpgradePanel()
     {
-        towerUpgradePanel.SetActive(true);
+        towerUpgradePanel.gameObject.SetActive(true);
+        towerUpgradePanel.SetupPanel();
     }
     
     public void CloseTowerUpgradePanel()
     {
-        towerUpgradePanel.SetActive(false);
+        towerUpgradePanel.gameObject.SetActive(false);
         TowerManager.instance.selectedTower.rangeModel.SetActive(false);
         TowerManager.instance.selectedTower = null;
         TowerManager.instance.selectedTowerEffect.SetActive(false);

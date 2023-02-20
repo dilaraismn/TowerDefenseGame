@@ -17,11 +17,6 @@ public class Castle : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage(float damageToTake)
     {
         currentHealth -= damageToTake;

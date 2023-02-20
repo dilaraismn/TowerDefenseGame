@@ -151,6 +151,7 @@ MonoBehaviour:
     cost: 300
   currenFireRateUpgrade: 0
   hasFireRateUpgrade: 1
+  fireRateText: "Upgrade \nFire \nRate"
 --- !u!1 &2525894144412376895
 GameObject:
   m_ObjectHideFlags: 0

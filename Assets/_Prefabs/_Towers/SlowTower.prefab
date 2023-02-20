@@ -180,6 +180,7 @@ MonoBehaviour:
     cost: 300
   currenFireRateUpgrade: 0
   hasFireRateUpgrade: 1
+  fireRateText: "Upgrade \nSlow Zone"
 --- !u!1 &5957785997653429570
 GameObject:
   m_ObjectHideFlags: 0

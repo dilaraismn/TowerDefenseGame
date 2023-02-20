@@ -53,13 +53,13 @@ public class Tower : MonoBehaviour
 
     private void OnMouseDown()
     {
-        UIManager.instance.OpenTowerUpgradePanel();
 
         if (TowerManager.instance.selectedTower != null)
         {
             TowerManager.instance.selectedTower.rangeModel.SetActive(false);
         }
         TowerManager.instance.selectedTower = this;
+        UIManager.instance.OpenTowerUpgradePanel();
         TowerManager.instance.MoveTowerSelectionEffect();
     }
 }

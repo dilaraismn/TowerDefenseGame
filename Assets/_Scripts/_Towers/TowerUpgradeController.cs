@@ -13,6 +13,7 @@ public class TowerUpgradeController : MonoBehaviour
     public UpgradeStage[] fireRateUpgrades;
     public int currenFireRateUpgrade;
     public bool hasFireRateUpgrade = true;
+    [TextArea]public string fireRateText;
 
     void Start()
     {
@@ -26,8 +27,17 @@ public class TowerUpgradeController : MonoBehaviour
         if (currentRangeUpgrade >= rangeUpgrades.Length)
         {
             hasRangeUpgrade = false;
+        } 
+    }
+
+    public void UpgradeFireRate()
+    {
+        _tower.fireRate = fireRateUpgrades[currenFireRateUpgrade].amount;
+        currenFireRateUpgrade++;
+        if (currenFireRateUpgrade >= fireRateUpgrades.Length)
+        {
+            hasFireRateUpgrade = false;
         }
-        
     }
 }
 
