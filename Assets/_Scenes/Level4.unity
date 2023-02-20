@@ -289,53 +289,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.562785, y: 0.19999999, z: 1.0000002}
   m_Center: {x: 0, y: 0.099999994, z: 0}
---- !u!1 &147407026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1699236787198465323, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-  m_PrefabInstance: {fileID: 1699236787575043305}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &147407027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147407026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105c62a66231a5946aaa80855841b7d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1723561195}
-  _castle: {fileID: 1899290025}
-  _path: {fileID: 148737838}
-  wavesToSpawn:
-  - enemySpawnOrder:
-    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
-    - {fileID: 3232925811725931107, guid: 192d4d4463d5cf04e8f541a6ab2ba88d, type: 3}
-    timeBetweenSpawns: 1
-    timeToNextWave: 10
-  - enemySpawnOrder:
-    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
-    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
-    - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
-    timeBetweenSpawns: 1
-    timeToNextWave: 10
-  - enemySpawnOrder:
-    - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
-    - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
-    - {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
-    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
-    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
-    - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
-    timeBetweenSpawns: 1
-    timeToNextWave: 0
-  waitForFirstSpawn: 2
-  shouldSpawn: 1
 --- !u!1 &148737836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,11 +3335,6 @@ Transform:
   m_Father: {fileID: 2072031256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1723561195 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1699236785847750366, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-  m_PrefabInstance: {fileID: 1699236787575043305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1727907030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4954,6 +4902,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 147407029, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
+      propertyPath: _path
+      value: 
+      objectReference: {fileID: 148737838}
+    - target: {fileID: 147407029, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
+      propertyPath: _castle
+      value: 
+      objectReference: {fileID: 1899290025}
+    - target: {fileID: 147407029, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
+      propertyPath: waveDisplayTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1699236785578009028, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5010,10 +4970,6 @@ PrefabInstance:
       propertyPath: _castle
       value: 
       objectReference: {fileID: 1899290025}
-    - target: {fileID: 1699236787198465322, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9603f79d3aa3b14498e0f3bd65ae5017, type: 3}
 --- !u!1001 &2252664176448865779

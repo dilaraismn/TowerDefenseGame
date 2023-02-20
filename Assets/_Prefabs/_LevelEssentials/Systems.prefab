@@ -5106,6 +5106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699236787198465325}
   - component: {fileID: 1699236787198465322}
+  - component: {fileID: 147407029}
   m_Layer: 0
   m_Name: Enemy_Spawner
   m_TagString: Untagged
@@ -5135,7 +5136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699236787198465323}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f8f8887495973746b7f6d4723b9b1b1, type: 3}
   m_Name: 
@@ -5152,3 +5153,45 @@ MonoBehaviour:
   - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
   - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
   amountTospawn: 15
+--- !u!114 &147407029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699236787198465323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105c62a66231a5946aaa80855841b7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1699236785847750366}
+  _castle: {fileID: 0}
+  _path: {fileID: 0}
+  wavesToSpawn:
+  - enemySpawnOrder:
+    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+    - {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
+    - {fileID: 3232925811725931107, guid: 192d4d4463d5cf04e8f541a6ab2ba88d, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 10
+  - enemySpawnOrder:
+    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
+    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
+    - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 10
+  - enemySpawnOrder:
+    - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
+    - {fileID: 6441412181628815384, guid: 3bd8fd79d765f84458f69c990fe54c24, type: 3}
+    - {fileID: 8551364506214353776, guid: 96a4afa7d0c43af4bb981db260637164, type: 3}
+    - {fileID: 9219868469784372707, guid: 079d74832afb5dd48a10903e4252997e, type: 3}
+    - {fileID: 6497716893014986492, guid: b59a81339109bce4e8780d04cbf0f819, type: 3}
+    - {fileID: 5948494828971221106, guid: c6eb4d34212482b45a34e2a91ae0f28d, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 0
+  waitForFirstSpawn: 2
+  shouldSpawn: 1

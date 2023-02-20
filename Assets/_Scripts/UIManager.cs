@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public TextMeshProUGUI goldText;
     public string levelSelectScene, mainMenuScene;
+    public TMP_Text waveText;
+    
     private void Awake()
     {
         instance = this;

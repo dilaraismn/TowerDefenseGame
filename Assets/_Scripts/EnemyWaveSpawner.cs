@@ -12,11 +12,15 @@ public class EnemyWaveSpawner : MonoBehaviour
     public float waitForFirstSpawn;
     public bool shouldSpawn = true;
     private float spawnCounter;
-
+    
+    public float waveDisplayTime;
+    private float waveDisplayCounter;
+    private int waveCounter;
 
     void Start()
     {
         spawnCounter = waitForFirstSpawn;
+        waveCounter = 1;
     }
 
     void Update()
@@ -26,6 +30,14 @@ public class EnemyWaveSpawner : MonoBehaviour
             spawnCounter -= Time.deltaTime;
             if (spawnCounter <= 0)
             {
+                if (wavesToSpawn[0].shouldDisplayWave)
+                {
+                    wavesToSpawn[0].shouldDisplayWave = false;
+                    UIManager.instance.waveText.gameObject.SetActive(true);
+                    UIManager.instance.waveText.text = "Wave " + waveCounter;
+                    waveDisplayCounter = waveDisplayTime;
+                }
+                
                 if (wavesToSpawn.Count > 0)
                 {
                     if (wavesToSpawn[0].enemySpawnOrder.Count > 0)
@@ -38,6 +50,8 @@ public class EnemyWaveSpawner : MonoBehaviour
                         {
                             spawnCounter = wavesToSpawn[0].timeToNextWave;
                             wavesToSpawn.RemoveAt(0);
+                            waveCounter++;
+                            
                             if (wavesToSpawn.Count == 0)
                             {
                                 shouldSpawn = false;
@@ -45,6 +59,15 @@ public class EnemyWaveSpawner : MonoBehaviour
                         }
                     }
                 }
+            }
+        }
+
+        if (waveDisplayCounter > 0)
+        {
+            waveDisplayCounter -= Time.deltaTime;
+            if (waveDisplayCounter <= 0)
+            {
+                UIManager.instance.waveText.gameObject.SetActive(false);
             }
         }
     }
@@ -56,4 +79,5 @@ public class EnemyWave
     public List<EnemyController> enemySpawnOrder = new List<EnemyController>(0);
     public float timeBetweenSpawns;
     public float timeToNextWave;
+    [HideInInspector]public bool shouldDisplayWave = true;
 }
