@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public AudioSource menuMusic, levelSelectMusic;
     public AudioSource[] bgm;
+    public AudioSource[] sfx;
     private int currentBGM;
     private bool playingBGM;
 
@@ -19,7 +20,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -72,5 +73,11 @@ public class AudioManager : MonoBehaviour
         currentBGM = Random.Range(0, bgm.Length);
         bgm[currentBGM].Play();
         playingBGM = true;
+    }
+
+    public void PlaySFX(int SFXToPlay)
+    {
+        sfx[SFXToPlay].Stop();
+        sfx[SFXToPlay].Play();
     }
 }

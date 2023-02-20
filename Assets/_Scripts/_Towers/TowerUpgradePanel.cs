@@ -38,6 +38,7 @@ public class TowerUpgradePanel : MonoBehaviour
         MoneyManager.instance.SpendMoney(-50);
         Destroy(TowerManager.instance.selectedTower.gameObject);
         UIManager.instance.CloseTowerUpgradePanel();
+        AudioManager.instance.PlaySFX(9);
     }
 
     public void UpgradeRange()
@@ -51,6 +52,7 @@ public class TowerUpgradePanel : MonoBehaviour
                 upgrader.UpgradeRange();
                 SetupPanel();
                 UIManager.instance.notEnoughGoldWarningText.SetActive(false);
+                AudioManager.instance.PlaySFX(10);
             }
             else
             {
@@ -70,6 +72,7 @@ public class TowerUpgradePanel : MonoBehaviour
                 upgrader.UpgradeFireRate();
                 SetupPanel();
                 UIManager.instance.notEnoughGoldWarningText.SetActive(false);
+                AudioManager.instance.PlaySFX(10);
             }
             else
             {

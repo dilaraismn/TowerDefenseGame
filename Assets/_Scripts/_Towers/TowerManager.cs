@@ -49,6 +49,7 @@ public class TowerManager : MonoBehaviour
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
                         indicator.gameObject.SetActive(false);
                         UIManager.instance.notEnoughGoldWarningText.SetActive(false);
+                        AudioManager.instance.PlaySFX(8);
                     }
                 }
             }
