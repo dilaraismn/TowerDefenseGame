@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
         _castles = FindObjectsOfType<Castle>();
         _waveSpawners = FindObjectsOfType<EnemyWaveSpawner>();
         levelActive = true;
+        
+        AudioManager.instance.PlayBGM();
     }
 
     void Update()

@@ -9,6 +9,11 @@ public class LevelSelectController : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
 
+    private void Start()
+    {
+        AudioManager.instance.PlayLevelSelectMusic();
+    }
+
     private void Update()
     {
         Vector2 adjustMousePos = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
