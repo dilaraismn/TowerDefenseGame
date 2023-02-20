@@ -75,10 +75,14 @@ public class UIManager : MonoBehaviour
     public void CloseTowerUpgradePanel()
     {
         towerUpgradePanel.gameObject.SetActive(false);
-       // TowerManager.instance.selectedTower.rangeModel.SetActive(false);
-        TowerManager.instance.selectedTower = null;
-        TowerManager.instance.selectedTowerEffect.SetActive(false);
         
+        if (TowerManager.instance.selectedTower != null)
+        {
+            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+            TowerManager.instance.selectedTower = null;
+        }
+        
+        TowerManager.instance.selectedTowerEffect.SetActive(false);
         notEnoughGoldWarningText.SetActive(false);
     }
     
